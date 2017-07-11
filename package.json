@@ -1,0 +1,75 @@
+{
+  "name": "webapp",
+  "version": "0.0.1",
+  "description": "webapp",
+  "main": "index.jsx",
+  "author": "Yoshiyuki Kato",
+  "license": "MIT",
+  "scripts": {
+    "watch": "$(npm bin)/webpack --config webpack.config.js --watch --debug",
+    "build": "$(npm bin)/webpack --config webpack.config.js",
+    "server": "$(npm bin)/webpack-dev-server --config webpack.config.js",
+    "test": "$(npm bin)/nyc $(npm bin)/mocha test/**/*.test.ts"
+  },
+  "nyc": {
+    "include": [
+      "src/ts/**/*.ts",
+      "src/ts/**/*.tsx"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "espower-typescript/guess"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.4",
+    "@types/jquery": "^2.0.45",
+    "@types/jsdom": "^2.0.31",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.29",
+    "@types/power-assert": "^1.4.29",
+    "@types/react": "^15.0.27",
+    "@types/react-addons-transition-group": "^15.0.0",
+    "@types/react-dom": "^15.5.0",
+    "@types/sinon": "^2.2.2",
+    "@types/validator": "^6.2.0",
+    "css-loader": "^0.28.0",
+    "espower-typescript": "^8.0.0",
+    "istanbul": "^0.4.5",
+    "jsdom": "^9.12.0",
+    "json-loader": "^0.5.4",
+    "material-colors": "^1.2.5",
+    "mocha": "^3.4.2",
+    "node-fs-extra": "^0.8.1",
+    "node-sass": "^4.5.2",
+    "nyc": "^11.0.2",
+    "power-assert": "^1.4.2",
+    "remap-istanbul": "^0.9.5",
+    "sass-loader": "^6.0.3",
+    "sinon": "^2.1.0",
+    "style-loader": "^0.16.1",
+    "ts-loader": "^2.1.0",
+    "typescript": "^2.3.4",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "jquery": "^3.2.1",
+    "react": "^15.4.2",
+    "react-ace": "^5.0.1",
+    "react-addons-transition-group": "^15.6.0",
+    "react-dnd": "^2.3.0",
+    "react-dnd-html5-backend": "^2.3.0",
+    "react-dom": "^15.4.2"
+  }
+}
