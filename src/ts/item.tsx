@@ -1,6 +1,8 @@
 import * as Promise from "bluebird";
 import React,{Component} from "react";
 import RemoveConfirmation from "./remove-confirmation";
+import {Remove} from "./util/icons"
+import colors from "./util/colors"
 
 export interface ItemProps{
   name : string;
@@ -31,7 +33,13 @@ export class Item extends Component<ItemProps, ItemState>{
       <div className="list-item-header">
         <div className="item-name" onClick={this.props.edit}>{this.props.name}</div>
         <div className="remove-item">
-          <button>削除</button>
+          <Remove 
+            width="24"
+            height="24"
+            color={colors.grey["500"]}
+            hoverColor={colors.red["800"]}
+            cursor="pointer"
+            onClick={this.handleRemove.bind(this)}/>
         </div>
       </div>
       <div className="list-item-body">{this.props.children}</div>

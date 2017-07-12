@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import {Items, ItemsProps} from "../../ts/items";
 import {Item, ItemProps} from "../../ts/item";
 import {ItemForm, ItemFormProps} from "../../ts/item-form";
-import colors from "./util/colors";
 
 interface SamplesState{
   items : SampleItemProps[],
