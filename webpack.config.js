@@ -7,7 +7,8 @@ module.exports = {
   plugins: [new webpack.optimize.AggressiveMergingPlugin()],
   
   entry : {
-    "index" : ["./src/scss/index", "./src/ts/index"]
+    "index" : ["./src/ts/index"],
+    "example" : ["./src/ts/examples/index"]
   },
 
   output: {

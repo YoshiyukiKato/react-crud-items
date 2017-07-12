@@ -1,8 +1,8 @@
 import * as Promise from "bluebird";
 import React,{Component} from "react";
-import * as Icon from "./icons";
 import RemoveConfirmation from "./remove-confirmation";
-import * as colors from "./colors";
+
+import {ItemForm, ItemFormProps} from "./item-form";
 
 export interface ItemsProps{
   api? : {
@@ -135,97 +135,5 @@ export class Items extends Component<ItemsProps, ItemsState>{
       this.state.items.splice(index, 1);
       this.setState(this.state);
     });
-  }
-}
-
-export interface ItemFormProps{
-  save : () => any;
-  close : () => any;
-}
-
-export class ItemForm extends Component<ItemFormProps, any>{
-  constructor(props:ItemFormProps){
-    super(props);
-  }
-
-  render(){
-    return <div id="item-form" className="modal-content">
-      {this.props.children}
-      <div className="item-form-action form-section">
-        <div className="save-item">
-          <a className="btn btn-submit" onClick={this.handleSave.bind(this)}>保存する</a>
-        </div>
-        <div className="close-item-form">
-          <a className="btn" onClick={this.handleClose.bind(this)}>閉じる</a>
-        </div>
-      </div>
-    </div>
-  }
-
-  handleSave(){
-    this.props.save();
-  }
-
-  handleClose(){
-    this.props.close();
-  }
-}
-
-export interface ItemProps{
-  name : string;
-  edit : () => any;
-  remove : () => any;
-}
-
-export interface ItemState{
-  toRemove : boolean
-}
-
-export class Item extends Component<ItemProps, ItemState>{
-  constructor(props:ItemProps){
-    super(props);
-    this.state = this.initialState;
-  }
-
-  get initialState():any{
-    return {
-      toRemove : false
-    };
-  }
-
-  render(){
-    const removeConfirmation = this.renderRemoveConfirmation();
-    
-    return <div className="list-item">
-      <div className="list-item-header">
-        <div className="item-name" onClick={this.props.edit}>{this.props.name}</div>
-        <div className="remove-item">
-          <Icon.Remove 
-            width="24"
-            height="24"
-            color={colors.grey["500"]}
-            hoverColor={colors.red["800"]}
-            cursor="pointer"
-            onClick={this.handleRemove.bind(this)}/>
-        </div>
-      </div>
-      <div className="list-item-body">{this.props.children}</div>
-      {removeConfirmation}
-    </div>
-  }
-
-  renderRemoveConfirmation(){
-    return this.state.toRemove ? <RemoveConfirmation 
-      name={this.props.name} 
-      remove={this.props.remove}
-      cancel={this.handleCancelRemove.bind(this)}/> : [];
-  }
-
-  handleRemove(){
-    this.setState({ toRemove : true });
-  }
-
-  handleCancelRemove(){
-    this.setState({ toRemove : false });
   }
 }
