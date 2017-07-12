@@ -33,7 +33,7 @@ export class Item extends Component<ItemProps, ItemState>{
       <div className="list-item-header">
         <div className="item-name" onClick={this.props.edit}>{this.props.name}</div>
         <div className="remove-item">
-          <Remove 
+          <Remove
             width="24"
             height="24"
             color={colors.grey["500"]}
