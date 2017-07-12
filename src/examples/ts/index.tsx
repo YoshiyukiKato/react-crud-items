@@ -1,8 +1,8 @@
 import React,{Component} from "react";
 import ReactDOM from "react-dom"; 
-import {Items, ItemsProps} from "../items";
-import {Item, ItemProps} from "../item";
-import {ItemForm, ItemFormProps} from "../item-form";
+import {Items, ItemsProps} from "../../ts/items";
+import {Item, ItemProps} from "../../ts/item";
+import {ItemForm, ItemFormProps} from "../../ts/item-form";
 import colors from "./util/colors";
 
 interface SamplesState{
@@ -65,9 +65,6 @@ class SampleItem extends Component<SampleItemProps, any>{
 
   render(){
     return <Item {...this.props}>
-      <div className="list-item-header">
-        <div className="item-name" onClick={this.props.edit}>{this.props.name}</div>
-      </div>
       <div className="list-item-body">
         <div className="approach-description">{this.props.description}</div>
       </div>

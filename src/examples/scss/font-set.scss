@@ -1,0 +1,62 @@
+//https://material.io/guidelines/style/typography.html#typography-typeface
+$font-weight-thin : 100;
+$font-weight-light : 300;
+$font-weight-regular : 400;
+$font-weight-medium : 500;
+$font-weight-bold : 700;
+$font-weight-black : 900;
+
+//https://material.io/guidelines/style/typography.html#typography-styles
+@mixin font-sie-dipxlay4(){
+  font-weight: $font-weight-light;
+  font-size : 112px;
+}
+@mixin font-set-dipxlay3(){
+  font-weight: $font-weight-regular;
+  font-size : 56px;
+};
+@mixin font-set-dipxlay2(){
+  font-weight: $font-weight-regular;
+  font-size : 45px;
+};
+@mixin font-set-dipxlay1(){
+  font-weight: $font-weight-regular;
+  font-size : 34px;
+};
+@mixin font-set-headline(){
+  font-weight: $font-weight-regular;
+  font-size : 24px;
+};
+@mixin font-set-title(){
+  font-weight: $font-weight-medium;
+  font-size : 21px;
+};
+@mixin font-set-subheading(){
+  font-weight: $font-weight-regular;
+  font-size : 16px;
+};
+@mixin font-set-body2(){
+  font-weight: $font-weight-medium;
+  font-size : 14px;
+};
+@mixin font-set-body1(){
+  font-weight: $font-weight-regular;
+  font-size : 14px;
+};
+@mixin font-set-caption(){
+  font-weight: $font-weight-regular;
+  font-size : 13px;
+};
+@mixin font-set-button(){
+  font-weight: $font-weight-medium;
+  font-size : 15px;
+};
+@mixin font-set-chip(){
+  font-weight: $font-weight-light;
+  font-size : 11px;
+};
+
+@mixin font-set-select(){
+  font-weight: $font-weight-light;
+  font-size : 12px;
+};

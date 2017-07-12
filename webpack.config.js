@@ -8,7 +8,7 @@ module.exports = {
   
   entry : {
     "index" : ["./src/ts/index"],
-    "example" : ["./src/ts/examples/index"]
+    "example" : ["./src/examples/ts/index", "./src/examples/scss/index"]
   },
 
   output: {
@@ -46,13 +46,13 @@ module.exports = {
         test: /\.(ts|tsx)?$/,
         loader : "ts-loader",
         exclude : /node_modules/,
-        include : __dirname + "/src/ts"
+        include : [__dirname + "/src/ts", __dirname + "/src/examples/ts"]
       },
 
       {
         test : /\.scss$/,
         loaders : ["style-loader", "css-loader", "sass-loader"],
-        include : [__dirname + "/src/scss"]
+        include : [__dirname + "/src/scss", __dirname + "/src/examples/scss"]
       }
     ]
   }
